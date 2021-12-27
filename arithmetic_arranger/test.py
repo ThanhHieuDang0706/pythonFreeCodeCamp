@@ -38,36 +38,33 @@ def arithmetic_arranger(problems, res=False):
             res_line.append((max_len_per_prom - len(result)) * ' ' + result)
 
     for line in first_line:
+        arranged_problems = arranged_problems + line
         if (line != first_line[-1]):
-            arranged_problems = arranged_problems + line + space_between_prom * ' '
-        else:
-            arranged_problems = arranged_problems + line
+            arranged_problems =  arranged_problems + 4 * ' '                
     arranged_problems = arranged_problems + '\n'
     
     for line in second_line:
-        if (line != first_line[-1]):
-            arranged_problems = arranged_problems + line + space_between_prom * ' '
-        else:
-            arranged_problems = arranged_problems + line
+        arranged_problems = arranged_problems + line
+        if (line != second_line[-1]):
+            arranged_problems =  arranged_problems + 4 * ' '
     
     arranged_problems = arranged_problems + '\n'    
-    for line in third_line:
-        if (line != first_line[-1]):
-            arranged_problems = arranged_problems + line + space_between_prom * ' '
-        else:
-            arranged_problems = arranged_problems + line
+    for i in range(len(third_line)):
+        arranged_problems = arranged_problems + third_line[i]
+        if (i != len(third_line) - 1):
+            arranged_problems =  arranged_problems + 4 * ' '
     
     if (res==True):
         arranged_problems = arranged_problems + '\n'
         for line in res_line:
-            if (line != first_line[-1]):
-                arranged_problems = arranged_problems + line + space_between_prom * ' '
-            else:
-                arranged_problems = arranged_problems + line
-
+            arranged_problems = arranged_problems + line
+            if (line != res_line[-1]):
+                arranged_problems =  arranged_problems + 4 * ' '
     return arranged_problems
 
-print(len(arithmetic_arranger(["3 + 855", "3801 - 2", "45 + 43", "123 + 49"])))
+# print(arithmetic_arranger(["3 + 855", "3801 - 2", "45 + 43", "123 + 49"]))
 
 expected = "    3      3801      45      123\n+ 855    -    2    + 43    +  49\n-----    ------    ----    -----"
-print (len(expected))
+actual = arithmetic_arranger(["3 + 855", "3801 - 2", "45 + 43", "123 + 49"]).rstrip()
+
+print(actual == expected)
