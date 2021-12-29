@@ -83,11 +83,12 @@ def create_spend_chart(categories):
 
     for category in categories:
         p = int((category.withdrawed / totalWithdraw) * 100)
-        if (p % 10) < 5:
-            p -= p % 10
-        elif (p % 10) >= 5:
-            p += 10 - p % 10
+        # if (p % 10) < 5:
+        #     p -= p % 10
+        # elif (p % 10) >= 5:
+        #     p += 10 - p % 10
 
+        p -= p % 10
         percentage.append(p)
 
     res = "Percentage spent by category\n"
@@ -95,7 +96,7 @@ def create_spend_chart(categories):
     for i in range(0, 11):
         number = 100 - i * 10
         res = res + (3 - len(str(number))) * " " + str(number) + "| "
-
+        print(number)
         for p in percentage:
             if p >= number:
                 res = res + "o" + "  "
@@ -122,5 +123,6 @@ def create_spend_chart(categories):
                 res += " "
             res += " " * 2
             if category == categories[-1]:
-                res += "\n"
+                if i < maxLenBudget - 1:
+                    res += "\n"
     return res
