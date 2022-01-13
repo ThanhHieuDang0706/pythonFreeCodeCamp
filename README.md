@@ -20,7 +20,7 @@ In order to code and run the projects:
 # Technologies
 > Python 3
 
-#Project info
+# Project Info
 There are 5 projects in this course:
 * [**Budget App**](https://github.com/ThanhHieuDang0706/pythonFreeCodeCamp/tree/main/Budget%20App)
 * [**Polygon Area Calculator**](https://github.com/ThanhHieuDang0706/pythonFreeCodeCamp/tree/main/Polygon%20Area%20Calculator)
@@ -28,5 +28,5 @@ There are 5 projects in this course:
 * [**Time Calculator**](https://github.com/ThanhHieuDang0706/pythonFreeCodeCamp/tree/main/Time%20Calculator)
 * [**Arithmetic Arranger**](https://github.com/ThanhHieuDang0706/pythonFreeCodeCamp/tree/main/arithmetic_arranger)
 
-#Status
+# Status
 Project is: **_completed_**
